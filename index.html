@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake Server Console</title>
+    <title>Server Admin Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #FFFFFF;
-            color: #000;
+            color: #0099CC;
             margin: 0;
         }
         .console-container {
@@ -32,13 +32,22 @@
         .metric {
             margin: 10px 0;
             font-size: 18px;
-            color: #0099CC;
+        }
+        .console-text {
+            background-color: #000;
+            color: #00FF00;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            white-space: pre-line;
         }
     </style>
 </head>
 <body>
     <div class="console-container">
-        <h1>Fake Server Console</h1>
+        <h1>Server Admin Page</h1>
         <div class="console">
             <div class="metric">
                 Temperature: <span id="temperature">--°C</span>
@@ -48,6 +57,10 @@
             </div>
             <div class="metric">
                 RAM Usage: <span id="ram-usage">--%</span>
+            </div>
+            <div class="console-text">
+                Welcome to Server Admin Console\n
+                Type 'help' for a list of available commands.
             </div>
         </div>
     </div>
