@@ -12,7 +12,7 @@
             margin: 0;
         }
         .console-container {
-            background-color: #0099CC;
+            background-color: #FFFFFF;
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -23,20 +23,20 @@
         }
         .console {
             background-color: #FFFFFF;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            width: 80%;
-            max-width: 400px;
+            width: 90%;
+            max-width: 500px;
         }
         .metric {
-            margin: 10px 0;
-            font-size: 18px;
+            margin: 20px 0;
+            font-size: 24px;
         }
         .console-text {
             background-color: #000;
             color: #00FF00;
-            padding: 10px;
+            padding: 15px;
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
             text-align: left;
@@ -50,13 +50,13 @@
         <h1>Server Admin Page</h1>
         <div class="console">
             <div class="metric">
+                RAM Usage: <span id="ram-usage">--%</span>
+            </div>
+            <div class="metric">
                 Temperature: <span id="temperature">--°C</span>
             </div>
             <div class="metric">
                 Fan Speed: <span id="fan-speed">-- RPM</span>
-            </div>
-            <div class="metric">
-                RAM Usage: <span id="ram-usage">--%</span>
             </div>
             <div class="console-text">
                 Welcome to Server Admin Console\n
