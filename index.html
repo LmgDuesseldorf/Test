@@ -3,34 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Server Admin Page</title>
+    <title>TrueAdmin - Storage Console</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #FFFFFF;
             color: #0099CC;
             margin: 0;
-        }
-        .console-container {
-            background-color: #FFFFFF;
-            padding: 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
+            justify-content: space-between;
             min-height: 100vh;
-            text-align: center;
         }
         .console {
             background-color: #FFFFFF;
+            color: #000000;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             width: 90%;
-            max-width: 500px;
+            max-width: 600px;
+            margin: 20px auto;
             flex-grow: 1;
         }
         .metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin: 20px 0;
             font-size: 24px;
         }
@@ -47,22 +46,23 @@
     </style>
 </head>
 <body>
-    <div class="console-container">
-        <h1>Server Admin Page</h1>
-        <div class="console">
-            <div class="metric">
-                RAM Usage: <span id="ram-usage">--%</span>
-            </div>
-            <div class="metric">
-                Temperature: <span id="temperature">--°C</span>
-            </div>
-            <div class="metric">
-                Fan Speed: <span id="fan-speed">-- RPM</span>
-            </div>
-            <div class="console-text">
-                Welcome to Server Admin Console\n
-                Type 'help' for a list of available commands.
-            </div>
+    <div class="console">
+        <h1>TrueAdmin - Storage Console</h1>
+        <div class="metric">
+            <span>Storage Pool: Pool1</span>
+            <span>Status: Online</span>
+        </div>
+        <div class="metric">
+            <span>Total Capacity: 1 TB</span>
+            <span>Used Capacity: 500 GB</span>
+        </div>
+        <div class="metric">
+            <span>Temperature: <span id="temperature">--°C</span></span>
+            <span>Fan Speed: <span id="fan-speed">-- RPM</span></span>
+        </div>
+        <div class="console-text">
+            Welcome to TrueAdmin Storage Console\n
+            Type 'help' for a list of available commands.
         </div>
     </div>
 
@@ -70,11 +70,9 @@
         function updateMetrics() {
             const temperature = Math.floor(Math.random() * 50) + 30; // Generate a random temperature between 30°C and 80°C
             const fanSpeed = Math.floor(Math.random() * 2000) + 1000; // Generate a random fan speed between 1000 RPM and 3000 RPM
-            const ramUsage = Math.floor(Math.random() * 80) + 10; // Generate a random RAM usage between 10% and 90%
 
             document.getElementById('temperature').textContent = temperature + '°C';
             document.getElementById('fan-speed').textContent = fanSpeed + ' RPM';
-            document.getElementById('ram-usage').textContent = ramUsage + '%';
         }
 
         setInterval(updateMetrics, 3000); // Update metrics every 3 seconds
