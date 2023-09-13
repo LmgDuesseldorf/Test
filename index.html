@@ -7,34 +7,48 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #222;
-            color: #00FF00;
-            padding: 20px;
+            background-color: #FFFFFF;
+            color: #000;
             margin: 0;
         }
+        .console-container {
+            background-color: #0099CC;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
         .console {
-            background-color: #000;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 400px;
         }
         .metric {
             margin: 10px 0;
-            font-size: 16px;
+            font-size: 18px;
+            color: #0099CC;
         }
     </style>
 </head>
 <body>
-    <div class="console">
-        <h1>Server Console</h1>
-        <div class="metric">
-            Temperature: <span id="temperature">--°C</span>
-        </div>
-        <div class="metric">
-            Fan Speed: <span id="fan-speed">-- RPM</span>
-        </div>
-        <div class="metric">
-            RAM Usage: <span id="ram-usage">--%</span>
+    <div class="console-container">
+        <h1>Fake Server Console</h1>
+        <div class="console">
+            <div class="metric">
+                Temperature: <span id="temperature">--°C</span>
+            </div>
+            <div class="metric">
+                Fan Speed: <span id="fan-speed">-- RPM</span>
+            </div>
+            <div class="metric">
+                RAM Usage: <span id="ram-usage">--%</span>
+            </div>
         </div>
     </div>
 
