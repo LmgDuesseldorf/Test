@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Server Console</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #00FF00;
+            padding: 20px;
+            margin: 0;
+        }
+        .console {
+            background-color: #000;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+        .metric {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="console">
+        <h1>Server Console</h1>
+        <div class="metric">
+            Temperature: <span id="temperature">--°C</span>
+        </div>
+        <div class="metric">
+            Fan Speed: <span id="fan-speed">-- RPM</span>
+        </div>
+        <div class="metric">
+            RAM Usage: <span id="ram-usage">--%</span>
+        </div>
+    </div>
+
+    <script>
+        function updateMetrics() {
+            const temperature = Math.floor(Math.random() * 50) + 30; // Generate a random temperature between 30°C and 80°C
+            const fanSpeed = Math.floor(Math.random() * 2000) + 1000; // Generate a random fan speed between 1000 RPM and 3000 RPM
+            const ramUsage = Math.floor(Math.random() * 80) + 10; // Generate a random RAM usage between 10% and 90%
+
+            document.getElementById('temperature').textContent = temperature + '°C';
+            document.getElementById('fan-speed').textContent = fanSpeed + ' RPM';
+            document.getElementById('ram-usage').textContent = ramUsage + '%';
+        }
+
+        setInterval(updateMetrics, 3000); // Update metrics every 3 seconds
+        updateMetrics(); // Initial update
+    </script>
+</body>
+</html>
